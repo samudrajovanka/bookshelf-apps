@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/style.css">
+  <title>Bookshelf Apps</title>
+</head>
+<body>
+  <header class="head_bar">
+    <h1 class="head_bar__title">Bookshelf Apps</h1>
+  </header>
+
+  <main>
+    <section class="input_section">
+      <h2 class="input_section__title">Add New Book</h2>
+
+      <form id="inputBook">
+        <div class="input_section__input input_section__input--block">
+          <label for="inputBookTitle">Title</label>
+          <input type="text" id="inputBookTitle" placeholder="Input title" required>
+        </div>
+
+        <div class="input_section__input input_section__input--block">
+          <label for="inputBookAuthor">Author</label>
+          <input type="text" id="inputBookAuthor" placeholder="Input author" required>
+        </div>
+
+        <div class="input_section__input input_section__input--block">
+          <label for="inputBookYear">Year</label>
+          <input type="number" id="inputBookYear" placeholder="Input year" required min="1">
+        </div>
+        <div class="input_section__checkbox input_section__chekbox">
+          <input id="inputBookIsComplete" type="checkbox">
+          <label for="inputBookIsComplete">Complete Reading</label>
+        </div>
+
+        <button type="submit" id="btnSubmitBook" class="button button--large button--primary">Save Book</button>
+      </form>
+    </section>
+
+    <hr style="margin: 24px 0">
+
+    <section class="search_section">
+      <form class="search_section__form" id="searchBook">
+        <div class="input_section__input input_section__input--block">
+          <input type="text" id="inputTextSearch" placeholder="Search Book With Title">
+        </div>
+        <button type="submit" class="button button--large button--primary">Search</button>
+      </form>
+    </section>
+
+    <section class="book_shelf">
+      <div class="book_shelf__list">
+        <h2 class="book_shelf__title">Uncomplete Reading</h2>
+        <div class="book_shelf__list_item" id="uncompleteBookshelfListItem"></div>
+      </div>
+      <div class="book_shelf__list">
+        <h2 class="book_shelf__title">Complete Reading</h2>
+        <div class="book_shelf__list_item" id="completeBookshelfListItem"></div>
+      </div>
+    </section>
+
+    <section class="overlay overlay--hidden">
+      <div class="overlay__container">
+        <p class="text-mute">Book Id: <span id="editBookId">id</span></p>
+
+        <form id="editBook">
+          <div class="input_section__input input_section__input--block">
+            <label for="inputEditBookTitle">Title</label>
+            <input type="text" id="inputEditBookTitle" placeholder="Input title" required>
+          </div>
+          <div class="input_section__input input_section__input--block">
+            <label for="inputEditBookAuthor">Author</label>
+            <input type="text" id="inputEditBookAuthor" placeholder="Input author" required>
+          </div>
+          <div class="input_section__input input_section__input--block">
+            <label for="inputEditBookYear">Year</label>
+            <input type="number" id="inputEditBookYear" placeholder="Input year" required>
+          </div>
+          <div class="input_section__checkbox input_section__chekbox">
+            <input id="inputEditBookIsComplete" type="checkbox">
+            <label for="inputEditBookIsComplete">Complete Reading</label>
+          </div>
+  
+          <div class="overlay__action">
+            <button type="submit" id="btnEditBook" class="button button--primary">Update Book</button>
+            <button type="button" id="btnCancelUpdate" class="button button--danger">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/dom.js" type="text/javascript"></script>
+  <script src="js/script.js" type="text/javascript"></script>
+</body>
+</html>
